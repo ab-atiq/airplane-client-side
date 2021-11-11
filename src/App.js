@@ -10,6 +10,7 @@ import AuthProvider from './contexts/AuthProvider';
 import Products from './Components/Pages/Products/Products';
 import Review from './Components/Pages/Review/Review';
 import Explore from './Components/Pages/Explore/Explore';
+import Purchase from './Components/Pages/Purchase/Purchase';
 
 
 function App() {
@@ -34,6 +35,9 @@ function App() {
             </Route>
             <Route path='/explore'>
               <Explore></Explore>
+            </Route>
+            <Route path='/purchase'>
+              <Purchase></Purchase>
             </Route>
             <Route path='/logIn'>
               <LogIn></LogIn>

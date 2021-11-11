@@ -8,20 +8,20 @@ const Header = () => {
     return (
         <Navbar bg="dark" variant="dark" sticky="top" collapseOnSelect expand="lg" >
             <Container>
-                <Navbar.Brand href="">AR</Navbar.Brand>
+                <Navbar.Brand style={{fontSize:'30px'}} href="">AR</Navbar.Brand>
                 <Navbar.Toggle />
                 <Navbar.Collapse className="justify-content-end">
-                    <Nav.Link as={Link} to="/home">Home</Nav.Link>
-                    <Nav.Link as={Link} to="/products">Products</Nav.Link>
-                    <Nav.Link as={Link} to="/review">Review</Nav.Link>
-                    <Nav.Link as={Link} to="/explore">Explore</Nav.Link>
+                    <Nav.Link style={{fontSize:'20px'}} as={Link} to="/home">Home</Nav.Link>
+                    <Nav.Link style={{fontSize:'20px'}} as={Link} to="/products">Products</Nav.Link>
+                    <Nav.Link style={{fontSize:'20px'}} as={Link} to="/review">Review</Nav.Link>
+                    <Nav.Link style={{fontSize:'20px'}} as={Link} to="/explore">Explore</Nav.Link>
 
                     <Navbar.Text>
                         {user?.displayName && <>Signed in as: {user?.displayName}</>}
                     </Navbar.Text>
 
-                    {user.email ? <Button onClick={logOut}> Logout</Button> :
-                        <Nav.Link as={Link} to="/login">Login</Nav.Link>
+                    {user.email ? <Button style={{fontSize:'20px'}} onClick={logOut}> Logout</Button> :
+                        <Nav.Link style={{fontSize:'20px'}} as={Link} to="/login">Login</Nav.Link>
                     }
                 </Navbar.Collapse>
             </Container>
