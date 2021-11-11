@@ -11,6 +11,7 @@ import Products from './Components/Pages/Products/Products';
 import Review from './Components/Pages/Review/Review';
 import Explore from './Components/Pages/Explore/Explore';
 import Purchase from './Components/Pages/Purchase/Purchase';
+import PrivateRoute from './Components/PrivateRoute/PrivateRoute';
 
 
 function App() {
@@ -36,9 +37,9 @@ function App() {
             <Route path='/explore'>
               <Explore></Explore>
             </Route>
-            <Route path='/purchase'>
+            <PrivateRoute path='/purchase'>
               <Purchase></Purchase>
-            </Route>
+            </PrivateRoute>
             <Route path='/logIn'>
               <LogIn></LogIn>
             </Route>
