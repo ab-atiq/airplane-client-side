@@ -1,4 +1,4 @@
-import { getAuth, signInWithPopup, GoogleAuthProvider, signOut, onAuthStateChanged, createUserWithEmailAndPassword, signInWithEmailAndPassword } from "firebase/auth";
+import { getAuth, signInWithPopup, GoogleAuthProvider, signOut, onAuthStateChanged, createUserWithEmailAndPassword, signInWithEmailAndPassword, updateProfile } from "firebase/auth";
 import { useEffect, useState } from "react";
 import initializeAuthentication from "../Components/LogIn/Firebase/firebase.init";
 
@@ -8,6 +8,7 @@ initializeAuthentication();
 const useFirebase = () => {
     const [user, setUser] = useState({});
     const [isLoading, setIsLoading] = useState(true);
+    const [name, setName] = useState('');
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [error, setError] = useState('')
@@ -24,6 +25,11 @@ const useFirebase = () => {
     const handlePasswordChange = e => {
         console.log(e.target.value);
         setPassword(e.target.value);
+    }
+
+    const handleNameChange = e => {
+        console.log(e.target.value);
+        setName(e.target.value);
     }
 
     const loggedINUser = e => {
@@ -46,11 +52,18 @@ const useFirebase = () => {
             setError('Password Must be 6 character');
             return;
         }
-        createUserWithEmailAndPassword(auth, email, password)
+        createUserWithEmailAndPassword(auth, email, password, name)
             .then(result => {
-                const user = result.user;
-                console.log(user);
                 setError('');
+                const newUser = { email, displayName: name };
+                setUser(newUser);
+                // send name to firebase after creation
+                updateProfile(auth.currentUser, {
+                    displayName: name
+                }).then(() => {
+                }).catch((error) => {
+                });
+
             })
             .catch(error => {
                 setError(error.message);
@@ -93,6 +106,7 @@ const useFirebase = () => {
         signInUsingGoogle,
         logOut,
         handleRegistration,
+        handleNameChange,
         handleEmailChange,
         handlePasswordChange,
         error,

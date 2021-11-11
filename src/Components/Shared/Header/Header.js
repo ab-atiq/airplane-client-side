@@ -15,6 +15,7 @@ const Header = () => {
                     <Nav.Link style={{fontSize:'20px'}} as={Link} to="/products">Products</Nav.Link>
                     <Nav.Link style={{fontSize:'20px'}} as={Link} to="/review">Review</Nav.Link>
                     <Nav.Link style={{fontSize:'20px'}} as={Link} to="/explore">Explore</Nav.Link>
+                    <Nav.Link style={{fontSize:'20px'}} as={Link} to="/purchase">Purchase</Nav.Link>
 
                     <Navbar.Text>
                         {user?.displayName && <>Signed in as: {user?.displayName}</>}

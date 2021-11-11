@@ -41,7 +41,8 @@ const LogIn = () => {
                     </div>
                     <Button variant="primary" type="submit">
                         Login
-                    </Button>{' '}
+                    </Button>
+                    <br />
                     <Button variant="primary" type="reset">
                         Reset
                     </Button>
