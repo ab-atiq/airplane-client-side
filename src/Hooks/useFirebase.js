@@ -11,7 +11,7 @@ const useFirebase = () => {
     const [name, setName] = useState('');
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
-    const [error, setError] = useState('')
+    const [error, setError] = useState('');
 
     const auth = getAuth();
     const googleProvider = new GoogleAuthProvider();
@@ -55,6 +55,8 @@ const useFirebase = () => {
         createUserWithEmailAndPassword(auth, email, password, name)
             .then(result => {
                 setError('');
+                alert('Registration successfully complete..!!');
+                e.target.reset();
                 const newUser = { email, displayName: name };
                 setUser(newUser);
                 // send name to firebase after creation

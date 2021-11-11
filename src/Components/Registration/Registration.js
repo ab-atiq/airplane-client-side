@@ -16,7 +16,7 @@ const Registration = () => {
                 history.push(redirect_uri);
             })
         // .finally(() => setIsLoading(false));
-    }
+    };
 
 
     return (
