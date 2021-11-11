@@ -7,6 +7,7 @@ import Space from './Space/Space';
 const Category = () => {
     return (
         <Container>
+            <h1>Category of Airplane</h1>
             <Row>
                 <Col xs={6} md={4}>
                     <Commercial></Commercial>
