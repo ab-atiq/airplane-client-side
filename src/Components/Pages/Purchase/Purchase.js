@@ -9,7 +9,7 @@ const Purchase = () => {
     const [product, setProduct] = useState({});
 
     useEffect(() => {
-        fetch('http://localhost:5000/products')
+        fetch('https://stormy-everglades-33424.herokuapp.com/products')
             .then(res => res.json())
             .then(data => {
                 const matchedProduct = data.find(sinPro => sinPro._id == purchaseId)
@@ -35,7 +35,7 @@ const Purchase = () => {
         const information = { ...purchaseInfo };
         console.log(information);
         // send to the server
-        fetch('http://localhost:5000/buyers', {
+        fetch('https://stormy-everglades-33424.herokuapp.com/buyers', {
             method: "POST",
             headers: {
                 'content-type': 'application/json'

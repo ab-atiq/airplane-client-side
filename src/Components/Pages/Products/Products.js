@@ -5,7 +5,7 @@ import './Products.css'
 const Products = () => {
     const [products, setProducts] = useState([]);
     useEffect(() => {
-        fetch('http://localhost:5000/limitProducts')
+        fetch('https://stormy-everglades-33424.herokuapp.com/limitProducts')
             .then(res => res.json())
             .then(data => setProducts(data));
     }, [])
