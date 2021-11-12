@@ -5,7 +5,7 @@ import useAuth from '../../Hooks/useAuth';
 import './LogIn.css';
 
 const LogIn = () => {
-    const { signInUsingGoogle, loggedINUser, handlePasswordChange, handleEmailChange, error } = useAuth();
+    const { signInUsingGoogle, loggedINUser, handlePasswordChange, handleEmailChange, error,saveUser } = useAuth();
     const location = useLocation();
     const history = useHistory();
     const redirect_uri = location.state?.from || '/';
@@ -14,6 +14,9 @@ const LogIn = () => {
         signInUsingGoogle()
             .then(result => {
                 // setUser(result.user);
+                const user = result.user;
+                console.log(user);
+                saveUser(user.email, user.displayName, "PUT");
                 history.push(redirect_uri);
             })
         // .finally(() => setIsLoading(false));

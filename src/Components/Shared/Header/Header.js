@@ -1,3 +1,4 @@
+import { Box } from '@mui/system';
 import React from 'react';
 import { Button, Container, Nav, Navbar } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
@@ -23,7 +24,11 @@ const Header = () => {
                             {user?.displayName && <>Signed in as: {user?.displayName}</>}
                         </Navbar.Text>
 
-                        {user.email ? <Button style={{ fontSize: '20px' }} onClick={logOut}> Logout</Button>
+                        {user.email ? 
+                            <Box className='d-flex'>
+                                <Nav.Link style={{ fontSize: '20px' }} as={Link} to="/dashboard">Dashboard</Nav.Link>
+                                <Button style={{ fontSize: '20px' }} onClick={logOut}> Logout</Button>
+                            </Box>
                             :
                             <Nav.Link style={{ fontSize: '20px' }} as={Link} to="/login">Login</Nav.Link>
                         }

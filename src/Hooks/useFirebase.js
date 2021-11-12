@@ -12,17 +12,7 @@ const useFirebase = () => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [error, setError] = useState('');
-    // const [productCollection,setProductCollection]=useState([]);
 
-    // useEffect(()=>{
-    //     fetch('http://localhost:5000/products')
-    //     .then(res=>res.json())
-    //     .then(data=>setProductCollection(data));
-    // },[]);
-
-    // const handlePurchase=(key)=>{
-    //     productCollection.filter(pro=>)
-    // }
 
     const auth = getAuth();
     const googleProvider = new GoogleAuthProvider();
@@ -70,13 +60,14 @@ const useFirebase = () => {
                 e.target.reset();
                 const newUser = { email, displayName: name };
                 setUser(newUser);
+                // save user to database
+                saveUser(email, name, 'POST');
                 // send name to firebase after creation
                 updateProfile(auth.currentUser, {
                     displayName: name
                 }).then(() => {
                 }).catch((error) => {
                 });
-
             })
             .catch(error => {
                 setError(error.message);
@@ -112,6 +103,17 @@ const useFirebase = () => {
             .finally(() => setIsLoading(false));
     }
 
+    const saveUser = (email, displayName, method) => {
+        const user = { email, displayName };
+        fetch('http://localhost:5000/users', {
+            method: method,
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(user)
+        })
+            .then()
+    }
 
     return {
         user,
@@ -123,7 +125,8 @@ const useFirebase = () => {
         handleEmailChange,
         handlePasswordChange,
         error,
-        loggedINUser
+        loggedINUser,
+        saveUser
     }
 }
 

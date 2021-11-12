@@ -13,6 +13,7 @@ import Explore from './Components/Pages/Explore/Explore';
 import Purchase from './Components/Pages/Purchase/Purchase';
 import PrivateRoute from './Components/PrivateRoute/PrivateRoute';
 import AddReview from './Components/Pages/AddReview/AddReview';
+import Dashboard from './Components/Pages/Dashboard/Dashboard';
 
 
 function App() {
@@ -38,14 +39,17 @@ function App() {
             <PrivateRoute path='/addReview'>
               <AddReview></AddReview>
             </PrivateRoute>
-            {/* <Route path='/purchase'>
+            <Route exact path='/purchase'>
               <Purchase></Purchase>
-            </Route> */}
+            </Route>
             <Route path='/explore'>
               <Explore></Explore>
             </Route>
             <PrivateRoute path='/purchase/:purchaseId'>
               <Purchase></Purchase>
+            </PrivateRoute>
+            <PrivateRoute path='/dashboard'>
+              <Dashboard></Dashboard>
             </PrivateRoute>
             <Route path='/logIn'>
               <LogIn></LogIn>

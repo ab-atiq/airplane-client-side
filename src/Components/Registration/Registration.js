@@ -4,7 +4,7 @@ import { Link, useLocation, useHistory } from 'react-router-dom';
 import useAuth from '../../Hooks/useAuth';
 
 const Registration = () => {
-    const { signInUsingGoogle, handleRegistration, handleNameChange, handlePasswordChange, handleEmailChange, error } = useAuth();
+    const { signInUsingGoogle, handleRegistration, handleNameChange, handlePasswordChange, handleEmailChange, error, saveUser } = useAuth();
     const location = useLocation();
     const history = useHistory();
     const redirect_uri = location.state?.from || '/';
@@ -13,6 +13,9 @@ const Registration = () => {
         signInUsingGoogle()
             .then(result => {
                 // setUser(result.user);
+                const user = result.user;
+                console.log(user);
+                saveUser(user.email, user.displayName, "PUT");
                 history.push(redirect_uri);
             })
         // .finally(() => setIsLoading(false));
