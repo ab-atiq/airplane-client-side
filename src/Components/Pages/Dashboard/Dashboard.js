@@ -15,26 +15,42 @@ import MailIcon from '@mui/icons-material/Mail';
 import MenuIcon from '@mui/icons-material/Menu';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
-import { Link } from 'react-router-dom';
-
+import {
+    BrowserRouter as Router,
+    Switch,
+    Route,
+    Link,
+    useParams,
+    useRouteMatch
+} from "react-router-dom";
+import ManageProducts from './ManageProducts/ManageProducts';
+import AddAProduct from './AddAProduct/AddAProduct';
+import MakeAdmin from './MakeAdmin/MakeAdmin';
+import useAuth from '../../../Hooks/useAuth';
+import AdminRoute from './AdminRoute/AdminRoute';
 const drawerWidth = 200;
 
 function Dashboard(props) {
     const { window } = props;
     const [mobileOpen, setMobileOpen] = React.useState(false);
+    const { admin } = useAuth();
 
     const handleDrawerToggle = () => {
         setMobileOpen(!mobileOpen);
     };
+
+    let { path, url } = useRouteMatch();
 
     const drawer = (
         <div>
             <Toolbar />
             <Divider />
             <Link style={{ fontSize: '20px' }} to="/home">Home</Link><br />
-            <Link style={{ fontSize: '20px' }} to="/manageProducts">Manage Products</Link><br />
-            <Link style={{ fontSize: '20px' }} to="/addAProduct">Add a Product</Link><br />
-            <Link style={{ fontSize: '20px' }} to="/makeAdmin">Make Admin</Link><br />
+            <Link style={{ fontSize: '20px' }} to={`${url}/manageProducts`}>Manage Products</Link><br />
+            {admin && <Box>
+                <Link style={{ fontSize: '20px' }} to={`${url}/addAProduct`}>Add a Product</Link><br />
+                <Link style={{ fontSize: '20px' }} to={`${url}/makeAdmin`}>Make Admin</Link><br />
+            </Box>}
             <List>
                 {['Inbox', 'Starred', 'Send email', 'Drafts'].map((text, index) => (
                     <ListItem button key={text}>
@@ -70,7 +86,7 @@ function Dashboard(props) {
                     >
                         <MenuIcon />
                     </IconButton>
-                    
+
                     <Typography variant="h6" noWrap component="div">
                         Dashboard
                     </Typography>
@@ -112,20 +128,20 @@ function Dashboard(props) {
                 component="main"
                 sx={{ flexGrow: 1, p: 3, width: { sm: `calc(100% - ${drawerWidth}px)` } }}
             >
-                <Typography paragraph>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-                    tempor incididunt ut labore et dolore magna aliqua. Rhoncus dolor purus non
-                    enim praesent elementum facilisis leo vel. Risus at ultrices mi tempus
-                    imperdiet. Semper risus in hendrerit gravida rutrum quisque non tellus.
-                    Convallis convallis tellus id interdum velit laoreet id donec ultrices.
-                    Odio morbi quis commodo odio aenean sed adipiscing. Amet nisl suscipit
-                    adipiscing bibendum est ultricies integer quis. Cursus euismod quis viverra
-                    nibh cras. Metus vulputate eu scelerisque felis imperdiet proin fermentum
-                    leo. Mauris commodo quis imperdiet massa tincidunt. Cras tincidunt lobortis
-                    feugiat vivamus at augue. At augue eget arcu dictum varius duis at
-                    consectetur lorem. Velit sed ullamcorper morbi tincidunt. Lorem donec massa
-                    sapien faucibus et molestie ac.
-                </Typography>
+                <Switch>
+                    <Route exact path={path}>
+                        <h3>Please select a topic.</h3>
+                    </Route>
+                    <Route path={`${path}/manageProducts`}>
+                        <ManageProducts></ManageProducts>
+                    </Route>
+                    <AdminRoute path={`${path}/addAProduct`}>
+                        <AddAProduct></AddAProduct>
+                    </AdminRoute>
+                    <AdminRoute path={`${path}/makeAdmin`}>
+                        <MakeAdmin></MakeAdmin>
+                    </AdminRoute>
+                </Switch>
             </Box>
         </Box>
     );
