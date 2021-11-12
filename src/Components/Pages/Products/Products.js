@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
+import { Container } from 'react-bootstrap';
 import Product from '../Product/Product';
-
+import './Products.css'
 const Products = () => {
     const [products, setProducts] = useState([]);
     useEffect(() => {
@@ -9,12 +10,14 @@ const Products = () => {
             .then(data => setProducts(data));
     }, [])
     return (
-        <div>
+        <Container fluid>
             <h1>This is product section.</h1>
-            {
-                products.map(product => <Product key={product._id} product={product} ></Product>)
-            }
-        </div>
+            <div className="product-contaier">
+                {
+                    products.map(product => <Product key={product._id} product={product} ></Product>)
+                }
+            </div>
+        </Container>
     );
 };
 

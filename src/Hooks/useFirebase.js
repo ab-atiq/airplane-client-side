@@ -12,6 +12,17 @@ const useFirebase = () => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [error, setError] = useState('');
+    // const [productCollection,setProductCollection]=useState([]);
+
+    // useEffect(()=>{
+    //     fetch('http://localhost:5000/products')
+    //     .then(res=>res.json())
+    //     .then(data=>setProductCollection(data));
+    // },[]);
+
+    // const handlePurchase=(key)=>{
+    //     productCollection.filter(pro=>)
+    // }
 
     const auth = getAuth();
     const googleProvider = new GoogleAuthProvider();

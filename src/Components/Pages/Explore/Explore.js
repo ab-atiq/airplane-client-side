@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { Container } from 'react-bootstrap';
 import SubExplore from '../SubExplore/SubExplore';
 
 
@@ -10,12 +11,14 @@ const Explore = () => {
             .then(data => setProducts(data));
     }, []);
     return (
-        <div>
+        <Container fluid>
             <h2>This is Explore section.</h2>
-            {
-                products.map(product=><SubExplore key={product._id} product={product} ></SubExplore>)
-            }
-        </div>
+            <div className='product-contaier'>
+                {
+                    products.map(product => <SubExplore key={product._id} product={product} ></SubExplore>)
+                }
+            </div>
+        </Container>
     );
 };
 

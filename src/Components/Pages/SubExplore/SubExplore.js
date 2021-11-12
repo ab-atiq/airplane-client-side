@@ -6,9 +6,9 @@ const SubExplore = ({ product }) => {
     return (
         <div>
             <h1>{name}</h1>
-            <img src={image} alt="" />
+            <img className='img-fluid' src={image} alt="" />
             <h6>{description}</h6>
-            <Button>Purchase</Button>
+            <Button >Purchase</Button>
         </div>
     );
 };
