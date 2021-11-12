@@ -38,10 +38,13 @@ function App() {
             <PrivateRoute path='/addReview'>
               <AddReview></AddReview>
             </PrivateRoute>
+            {/* <Route path='/purchase'>
+              <Purchase></Purchase>
+            </Route> */}
             <Route path='/explore'>
               <Explore></Explore>
             </Route>
-            <PrivateRoute path='/purchase'>
+            <PrivateRoute path='/purchase/:purchaseId'>
               <Purchase></Purchase>
             </PrivateRoute>
             <Route path='/logIn'>

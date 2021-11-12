@@ -1,10 +1,22 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
+import { useParams } from 'react-router';
 import useAuth from '../../../Hooks/useAuth';
 import './Purchase.css';
 
 const Purchase = () => {
     const { user } = useAuth();
-    // console.log(user);
+    const { purchaseId } = useParams();
+    const [product, setProduct] = useState({});
+
+    useEffect(() => {
+        fetch('http://localhost:5000/products')
+            .then(res => res.json())
+            .then(data => {
+                const matchedProduct = data.find(sinPro => sinPro._id == purchaseId)
+                setProduct(matchedProduct)
+            });
+    }, [])
+    
     const initialInfo = { buyerName: user.displayName, email: user.email, phone: '' };
     // const initialInfo = { buyerName: user.displayName };
     // console.log(initialInfo);
@@ -44,6 +56,7 @@ const Purchase = () => {
     return (
         <div>
             <h1>Please, give your right info for purchase product.</h1>
+            <h1>{product._id}</h1>
             <form onSubmit={handlePurchaseSubmit}>
                 <input type="text" onBlur={handleOnBlur} defaultValue={user.displayName} name='buyerName' />
                 <input type="email" defaultValue={user.email} onBlur={handleOnBlur} name='email' />
