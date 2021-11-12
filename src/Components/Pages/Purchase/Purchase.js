@@ -4,9 +4,10 @@ import './Purchase.css';
 
 const Purchase = () => {
     const { user } = useAuth();
+    // console.log(user);
     const initialInfo = { buyerName: user.displayName, email: user.email, phone: '' };
     // const initialInfo = { buyerName: user.displayName };
-    console.log(initialInfo);
+    // console.log(initialInfo);
     const [purchaseInfo, setPurchaseInfo] = useState(initialInfo);
 
     const handleOnBlur = e => {

@@ -12,6 +12,7 @@ import Review from './Components/Pages/Review/Review';
 import Explore from './Components/Pages/Explore/Explore';
 import Purchase from './Components/Pages/Purchase/Purchase';
 import PrivateRoute from './Components/PrivateRoute/PrivateRoute';
+import AddReview from './Components/Pages/AddReview/AddReview';
 
 
 function App() {
@@ -34,6 +35,9 @@ function App() {
             <Route path='/review'>
               <Review></Review>
             </Route>
+            <PrivateRoute path='/addReview'>
+              <AddReview></AddReview>
+            </PrivateRoute>
             <Route path='/explore'>
               <Explore></Explore>
             </Route>
