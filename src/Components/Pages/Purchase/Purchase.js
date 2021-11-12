@@ -16,7 +16,7 @@ const Purchase = () => {
                 setProduct(matchedProduct)
             });
     }, [])
-    
+
     const initialInfo = { buyerName: user.displayName, email: user.email, phone: '' };
     // const initialInfo = { buyerName: user.displayName };
     // console.log(initialInfo);
@@ -57,6 +57,7 @@ const Purchase = () => {
         <div>
             <h1>Please, give your right info for purchase product.</h1>
             <h1>{product._id}</h1>
+            <img style={{ width: '200px' }} src={product.image} alt="" />
             <form onSubmit={handlePurchaseSubmit}>
                 <input type="text" onBlur={handleOnBlur} defaultValue={user.displayName} name='buyerName' />
                 <input type="email" defaultValue={user.email} onBlur={handleOnBlur} name='email' />
