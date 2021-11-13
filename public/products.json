@@ -1,56 +1,67 @@
 [
     {
         "name": "Boeing Next-Generation 737",
+        "price": "$12M",
         "image": "https://www.boeing.com/resources/boeingdotcom/commercial/737ng/assets/images/marquee.jpg",
         "description": "The Next-Generation 737 provides our airline customers with superior reliability, fuel efficiency and high-value returns operators require in today's competitive market. We will continue to provide this level of performance and quality as we transition to the 737 MAX. The popularity of the Next-Generation 737, combined with new innovation, launched our 737 MAX Family. With more than 5,000 orders, the 737 MAX is the fastest-selling airplane in Boeing’s history."
     },
     {
         "name": "Boeing 737 MAX",
+        "price": 1150150,
         "image": "https://www.boeing.com/resources/boeingdotcom/commercial/737max/assets/images/737max_hero_new2_1280x436.jpg",
         "description": "The 737 MAX family is designed to offer the greatest flexibility, reliability and efficiency in the single-aisle market. Every airplane will feature the new Boeing Sky Interior, highlighted by modern sculpted sidewalls and window reveals, LED lighting that enhances the sense of spaciousness and larger pivoting overhead storage bins."
     },
     {
         "name": "BOEING BUSINESS JETS",
+        "price": 1150150,
         "image": "https://www.boeing.com/resources/boeingdotcom/commercial/bbj/assets/images/gallery/large-bbj-03.jpg",
         "description": "Boeing Business Jets brings the best of commercial aviation into the realm of private air travel, offering customers a wide range of Boeing products that can be uniquely customized for the private, business or governmental sectors. The robust characteristics of these airplanes also provide an excellent value proposition when outfitted for the private market; offering larger, more personalized space, unmatched reliability and worldwide support. Our customers put a high premium on quality, convenience and mobility. Most often, they want access to the same amenities in the air as they have on the ground including an office, bedroom, shower, dining facilities, entertainment areas and more. And Boeing Business Jets can deliver it all. That's a better way to fly."
     },
     {
         "name": "AH-64 APACHE",
+        "price": 1150150,
         "image": "https://www.boeing.com/resources/boeingdotcom/defense/ah-64_apache/images/ah_64_gallery_med_01_960x600.jpg",
         "description": "From the AH-64A in 1984 to today’s AH-64E Version 6 (v6), one thing about the Apache hasn’t changed: its reputation as the world’s most advanced and proven attack helicopter. With more than 1,200 aircraft in operation accumulating over 4 million flight hours, 1.3 million of which have been in combat, the AH-64 Apache represents the backbone of the U.S. Army attack helicopter fleet and a growing number of international defense forces. With the AH-64E in production until at least 2028, the Apache will serve the U.S. Army and its partner nations as the world’s primary attack helicopter into the 2060s. As Boeing and the U.S. Army continue to invest in nextgeneration technologies, the Apache brings affordable Modular Open Systems Architecture capability to serve as a centerpiece in the Multi-Domain Operations (MDO) battlefield for decades to come."
     },
     {
         "name": "D-17 GLOBEMASTER III",
+        "price": 1150150,
         "image": "https://www.boeing.com/resources/boeingdotcom/defense/c-17_globemaster_iii/images/c_17_hero_lrg_02_1280x720.jpg",
         "description": "A high-wing, four-engine, T-tailed military transport aircraft, the multi-service C-17 can carry large equipment, supplies and troops directly to small airfields in harsh terrain anywhere in the world. The massive, sturdy, long-haul aircraft tackles distance, destination and heavy, oversized payloads in unpredictable conditions. It has delivered cargo in every worldwide operation since the 1990s.Boeing has partnered with the U.S. Air Force on C-17 sustainment since the delivery of the first aircraft in 1993. With a focus on high performance at an affordable cost, Boeing provides sustainment and maintenance for global C-17 customers in eight allied countries. The C-17 fleet has a best-in-class combined dollar per flight hour and mission capable rate, performing at the highest level of readiness worldwide."
     },
     {
         "name": "ADVANCE F-15",
+        "price": 1150150,
         "image": "https://www.boeing.com/resources/boeingdotcom/defense/f-15_strike_eagle/images/f15_gallery_med_05_960x600.jpg",
         "description": "The F-15 is an affordable, low-risk solution that maintains capacity and adds capability to the U.S. Air Force while preserving the Air Superiority and Homeland Defense missions. Today's F-15 offers next generation technologies including an advanced cockpit, AESA radar, digital electronic warfare suite, the world's fastest mission computer and modern sensors to remain ahead of current and evolving threats. With more speed, more range and more payload, the undefeated F-15 is combat ready today."
     },
     {
         "name": "CHINOOK BLOCK II",
+        "price": 1150150,
         "image": "https://www.boeing.com/resources/boeingdotcom/defense/ch-47_chinook/images/block-ii-hero-1280x720.jpg",
         "description": "To safely and effectively accomplish critical future missions, soldiers must have next-generation heavy-lift capabilities. H-47 Chinook Block II is the only way to rapidly and affordably achieve that goal. Boeing’s H-47 Chinook Block II is powered by cutting-edge technologies to lift more throughout the envelope – especially in high, hot operating conditions – all of which enable soldiers to meet tomorrow’s heavy-lift mission requirements. Not only does Block II improve readiness for the U.S. Army and Special Operations warfighters, it also limits future sustainment costs and ensures that the Chinook fleet will be available to serve for decades to come. The program also supports an essential industrial base, allowing key suppliers within the aerospace sector to remain productive while safeguarding American jobs. With more than 950 Chinooks in 20 countries, the program continues to deliver unrivaled production, maintenance and sustainment cost efficiencies."
     },
     {
         "name": "WEAPONS",
+        "price": 1150150,
         "image": "https://www.boeing.com/resources/boeingdotcom/defense/weapons-weapons/images/weapons_hotspot_background_960x410.jpg",
         "description": "From JDAM tail kits to support for the Harpoon, Boeing’s expertise runs throughout its product line. Boeing serves the U.S. Air Force, U.S. Navy, the Marines and many U.S. allies by producing and integrating precise, long-range and focused munitions. From the more than 400,000 Joint Direct Attack Munition (JDAM) tail kits Boeing has built, to the relentless sustainment and upgrade support and it has provided its Harpoon Weapon System, Boeing’s expertise in weapons extends throughout its varied product line. The company serves the U.S. Air Force, the U.S. Navy, the U.S. Marines and many U.S. international allies by producing, integrating and supporting precise, long-range and focused munitions capabilities."
     },
     {
         "name": "B-1B LANCER",
+        "price": 1150150,
         "image": "https://www.boeing.com/resources/boeingdotcom/defense/b-1b_bomber/images/b_1_gallery_med_02_960x600.jpg",
         "description": "Nicknamed “The Bone,” the B-1B Lancer is a long-range, multi-mission, supersonic conventional bomber, which has served the United States Air Force since 1985. The aircraft is on track to continue flying, at current demanding operations tempo, out to 2040 and beyond, and Boeing partners with the Air Force to keep the B-1 mission ready. Originally designed for nuclear capabilities, the B-1 switched to an exclusively conventional combat role in the mid-1990s. In 1999, during Operation Allied Force, six B-1s flew 2 percent of the strike missions, yet dropped 20 percent of the ordnance, and during Operation Enduring Freedom the B-1 flew on 2 percent of the sorties while dropping over 40 percent of the precision weapons. The B-1 has been nearly continuously deployed in combat operations over Afghanistan and Iraq since 2001."
     },
     {
         "name": "SPACE LAUNCH SYSTEM",
+        "price": 1150150,
         "image": "https://www.boeing.com/resources/boeingdotcom/space/space_launch_system/images/sls_launchpad_hero_lg.jpg",
         "description": "NASA’s Space Launch System is the most powerful rocket ever built, the backbone for a permanent human presence in deep space. Its first Boeing-built core stage has finished a series of major tests known as Green Run, and been delivered to Kennedy Space Center.Boeing people and products have powered giant leaps in human space exploration over the past five decades. Now, with the NASA Artemis program — named after Apollo’s twin sister — Boeing will be part of landing the first woman and first person of color on the moon and the sustainable exploration of more of the lunar surface than ever before. What NASA and its commercial and international partners learn on and around the moon will enable astronauts to take the next giant leap — all the way to Mars. NASA’s Space Launch System (SLS) is the technologically advanced, heavy-lift rocket that will get us there."
     },
     {
         "name": "X-37B",
+        "price": 1150150,
         "image": "https://www.boeing.com/resources/boeingdotcom/space/x37b/x37b_hero_1280x436.jpg",
         "description": "The X-37B is one of the world’s newest and most advanced re-entry spacecraft, designed to operate in low-earth orbit, 150 to 500 miles above the Earth. The vehicle is the first since the Space Shuttle with the ability to return experiments to Earth for further inspection and analysis. This United States Air Force unmanned space vehicle explores reusable vehicle technologies that support long-term space objectives.The X-37B has a lifting body-style and landing profile that is similar to the Space Shuttle, but the vehicle is one-fourth the size. The X-37B design combines the best of aircraft and spacecraft into an affordable system that is easy to operate and maintain.The on-orbit duration of the X-37B will vary based on flight requirements but has the ability to perform flights lasting up to 270 days."
     }

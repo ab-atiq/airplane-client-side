@@ -3,11 +3,12 @@ import { Button } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 
 const Product = (props) => {
-    const { _id, name, image, description } = props.product;
+    const { _id, name, image, description,price } = props.product;
     return (
         <div className='product-container'>
             <h2>{name}</h2>
             <img className='img-fluid my-4' src={image} alt="" />
+            <h4>Price: ${price}</h4>
             <h3>Description:</h3>
             <h6>{description}</h6>
             <Link to={`/purchase/${_id}`}><Button>Purchase</Button></Link>
