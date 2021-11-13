@@ -54,9 +54,9 @@ const Purchase = () => {
     }
 
     return (
-        <div>
-            <h1>Please, give your right info for purchase product.</h1>
-            <h1>{product?._id}</h1>
+        <div className='container'>
+            <h1 className='text-primary'>Please, give your right info for purchase product.</h1>
+            <h1>{product?.name}</h1>
             <img style={{ width: '200px' }} src={product?.image} alt="" />
             <form onSubmit={handlePurchaseSubmit}>
                 <label>Name:</label>
