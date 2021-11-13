@@ -7,12 +7,10 @@ import Footer from './Components/Shared/Footer/Footer';
 import LogIn from './Components/LogIn/LogIn';
 import Registration from './Components/Registration/Registration';
 import AuthProvider from './contexts/AuthProvider';
-import Products from './Components/Pages/Products/Products';
 import Review from './Components/Pages/Review/Review';
 import Explore from './Components/Pages/Explore/Explore';
 import Purchase from './Components/Pages/Purchase/Purchase';
 import PrivateRoute from './Components/PrivateRoute/PrivateRoute';
-import AddReview from './Components/Pages/AddReview/AddReview';
 import Dashboard from './Components/Pages/Dashboard/Dashboard';
 
 
