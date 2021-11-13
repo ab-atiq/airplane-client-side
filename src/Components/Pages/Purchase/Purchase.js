@@ -59,9 +59,13 @@ const Purchase = () => {
             <h1>{product?._id}</h1>
             <img style={{ width: '200px' }} src={product?.image} alt="" />
             <form onSubmit={handlePurchaseSubmit}>
+                <label>Name:</label>
                 <input type="text" onBlur={handleOnBlur} defaultValue={user.displayName} name='buyerName' />
+                <label>Email:</label>
                 <input type="email" defaultValue={user.email} onBlur={handleOnBlur} name='email' />
+                <label>Number:</label>
                 <input type="number" placeholder='Phone Number' name='phone' onBlur={handleOnBlur} />
+                <label>Address:</label>
                 <textarea placeholder="Give your details Information" id="" cols="10" rows="5" name='address' onBlur={handleOnBlur}></textarea>
                 <input style={{ width: '80px' }} className='btn btn-primary' type="submit" value="Submit" />
             </form>

@@ -38,9 +38,13 @@ const AddAProduct = () => {
         <div>
             <h1>Add A Product</h1>
             <form onSubmit={handleReviewSubmit} >
+                <label>Name:</label>
                 <input type="text" ref={nameRef}  placeholder='Name' required />
+                <label>Product Price:</label>
                 <input type="number" ref={numberRef} placeholder='Product Price' required />
+                <label>Image URL:</label>
                 <input type="text" ref={imageRef} placeholder='Image URL' required />
+                <label>Description Product:</label>
                 <textarea type="text" ref={descriptionRef} name='description' rows='10' placeholder='Description' required />
                 <input style={{ width: '130px' }} className='btn btn-primary' type="submit" value="Add A Product" />
             </form>
