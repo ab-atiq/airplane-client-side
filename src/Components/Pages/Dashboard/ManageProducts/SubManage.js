@@ -5,7 +5,7 @@ const SubManage = ({ product, products, setProducts }) => {
     const { _id, name, image } = product;
 
     const handleDelete = id => {
-        const url = `http://localhost:5000/products/${id}`;
+        const url = `https://stormy-everglades-33424.herokuapp.com/products/${id}`;
         fetch(url, {
             method: 'DELETE'
         })

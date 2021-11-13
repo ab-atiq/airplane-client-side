@@ -1,7 +1,6 @@
-import React, { useRef, useState } from 'react';
+import React, { useRef } from 'react';
 
 const AddAProduct = () => {
-    const [product, setProduct] = useState({});
     const nameRef = useRef();
     const imageRef = useRef();
     const descriptionRef = useRef();
@@ -15,7 +14,7 @@ const AddAProduct = () => {
         const newProduct = { name: name, image: image, description: description };
 
         // send to the server
-        fetch('http://localhost:5000/products', {
+        fetch('https://stormy-everglades-33424.herokuapp.com/products', {
             method: "POST",
             headers: {
                 'content-type': 'application/json'
