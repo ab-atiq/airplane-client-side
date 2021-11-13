@@ -11,9 +11,9 @@ const Explore = () => {
             .then(data => setProducts(data));
     }, []);
     return (
-        <Container fluid>
-            <h2>This is Explore section.</h2>
-            <div className='product-contaier'>
+        <Container fluid className='mb-4'>
+            <h2 className='py-3 text-primary'>All products</h2>
+            <div className='products-contaier'>
                 {
                     products.map(product => <SubExplore key={product._id} product={product} ></SubExplore>)
                 }

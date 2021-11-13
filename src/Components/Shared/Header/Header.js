@@ -14,11 +14,9 @@ const Header = () => {
                     <Navbar.Toggle />
                     <Navbar.Collapse className="justify-content-end">
                         <Nav.Link style={{ fontSize: '20px' }} as={Link} to="/home">Home</Nav.Link>
-                        <Nav.Link style={{ fontSize: '20px' }} as={Link} to="/products">Products</Nav.Link>
                         <Nav.Link style={{ fontSize: '20px' }} as={Link} to="/review">Review</Nav.Link>
-                        <Nav.Link style={{ fontSize: '20px' }} as={Link} to="/addReview">Add Review</Nav.Link>
-                        <Nav.Link style={{ fontSize: '20px' }} as={Link} to="/explore">Explore</Nav.Link>
                         <Nav.Link style={{ fontSize: '20px' }} as={Link} to="/purchase">Purchase</Nav.Link>
+                        <Nav.Link style={{ fontSize: '20px' }} as={Link} to="/explore">Explore</Nav.Link>
 
                         <Navbar.Text>
                             {user?.displayName && <>Signed in as: {user?.displayName}</>}

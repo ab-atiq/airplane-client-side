@@ -7,7 +7,7 @@ import { Col, Container, Row } from 'react-bootstrap';
 const SubReview = ({ review }) => {
     const { name, image, star, description } = review;
     return (
-        <Container>
+        <Container className='subreview-container'>
             <Row sm={12} className="justify-content-center mb-3">
                 <Col>
                     {
@@ -21,6 +21,7 @@ const SubReview = ({ review }) => {
                     <h2>{name}</h2>
                     <Rating
                         initialRating={star}
+                        className='text-warning'
                         emptySymbol="far fa-star fa-2x"
                         fullSymbol="fas fa-star fa-2x"
                         readonly

@@ -1,5 +1,17 @@
-.product-contaier{
+.products-contaier{
     display: grid;
     grid-template-columns: repeat(2,1fr);
-    grid-gap: 10px;
+    grid-gap: 50px;
+}
+.product-container{
+    padding: 20px;
+    border: 2px solid blue;
+    border-radius: 25px;
+}
+@media only screen and (max-width:1000px) {
+    .products-contaier{
+        display: grid;
+        grid-template-columns: repeat(1,1fr);
+        grid-gap: 50px;
+    }
 }

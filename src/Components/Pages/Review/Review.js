@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { Container } from 'react-bootstrap';
 import SubReview from '../SubReview/SubReview';
 import './Review.css'
 
@@ -10,14 +11,14 @@ const Review = () => {
             .then(data => setReviews(data))
     }, [])
     return (
-        <div>
-            <h1>This is Review section.</h1>
+        <Container className='mb-5'>
+            <h1 className='my-4 text-primary'>All Reviews</h1>
             <div className='review-container'>
                 {
                     reviews.map(review => <SubReview key={review._id} review={review} ></SubReview>)
                 }
             </div>
-        </div>
+        </Container>
     );
 };
 

@@ -6,21 +6,13 @@ import CssBaseline from '@mui/material/CssBaseline';
 import Divider from '@mui/material/Divider';
 import Drawer from '@mui/material/Drawer';
 import IconButton from '@mui/material/IconButton';
-import InboxIcon from '@mui/icons-material/MoveToInbox';
-import List from '@mui/material/List';
-import ListItem from '@mui/material/ListItem';
-import ListItemIcon from '@mui/material/ListItemIcon';
-import ListItemText from '@mui/material/ListItemText';
-import MailIcon from '@mui/icons-material/Mail';
 import MenuIcon from '@mui/icons-material/Menu';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import {
-    BrowserRouter as Router,
     Switch,
     Route,
     Link,
-    useParams,
     useRouteMatch
 } from "react-router-dom";
 import ManageProducts from './ManageProducts/ManageProducts';
@@ -28,12 +20,17 @@ import AddAProduct from './AddAProduct/AddAProduct';
 import MakeAdmin from './MakeAdmin/MakeAdmin';
 import useAuth from '../../../Hooks/useAuth';
 import AdminRoute from './AdminRoute/AdminRoute';
+import Button from '@restart/ui/esm/Button';
+import MyOrders from './MyOrders/MyOrders';
+import Pay from './Pay/Pay';
+import AddReview from '../AddReview/AddReview';
+import Explore from '../Explore/Explore';
 const drawerWidth = 200;
 
 function Dashboard(props) {
     const { window } = props;
     const [mobileOpen, setMobileOpen] = React.useState(false);
-    const { admin } = useAuth();
+    const { admin, logOut } = useAuth();
 
     const handleDrawerToggle = () => {
         setMobileOpen(!mobileOpen);
@@ -45,22 +42,23 @@ function Dashboard(props) {
         <div>
             <Toolbar />
             <Divider />
-            <Link style={{ fontSize: '20px' }} to="/home">Home</Link><br />
-            <Link style={{ fontSize: '20px' }} to={`${url}/manageProducts`}>Manage Products</Link><br />
-            {admin && <Box>
-                <Link style={{ fontSize: '20px' }} to={`${url}/addAProduct`}>Add a Product</Link><br />
-                <Link style={{ fontSize: '20px' }} to={`${url}/makeAdmin`}>Make Admin</Link><br />
-            </Box>}
-            <List>
-                {['Inbox', 'Starred', 'Send email', 'Drafts'].map((text, index) => (
-                    <ListItem button key={text}>
-                        <ListItemIcon>
-                            {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
-                        </ListItemIcon>
-                        <ListItemText primary={text} />
-                    </ListItem>
-                ))}
-            </List>
+            <Link style={{ fontSize: '20px', textDecoration: 'none' }} to="/home">Home</Link><br />
+            
+            {admin ?
+                <Box>
+                    <Link style={{ fontSize: '20px', textDecoration: 'none' }} to={`${url}/makeAdmin`}>Make Admin</Link><br />
+                    <Link style={{ fontSize: '20px', textDecoration: 'none' }} to={`${url}/addAProduct`}>Add a Product</Link><br />
+                    <Link style={{ fontSize: '20px', textDecoration: 'none' }} to={`${url}/manageProducts`}>Manage Products</Link><br />
+                    <Button className='btn btn-primary' style={{ fontSize: '20px', marginTop: '20px' }} onClick={logOut}> Logout</Button>
+                </Box>
+                :
+                <Box>
+                    <Link style={{ fontSize: '20px', textDecoration: 'none' }} to={`${url}/pay`}>Pay</Link><br />
+                    <Link style={{ fontSize: '20px', textDecoration: 'none' }} to={`${url}/myOrders`}>My Orders</Link><br />
+                    <Link style={{ fontSize: '20px', textDecoration: 'none' }} to={`${url}/addReview`}>Add Review</Link><br />
+                    <Button className='btn btn-primary' style={{ fontSize: '20px', marginTop: '20px' }} onClick={logOut}> Logout</Button>
+                </Box>
+            }
         </div>
     );
 
@@ -87,7 +85,7 @@ function Dashboard(props) {
                         <MenuIcon />
                     </IconButton>
 
-                    <Typography variant="h6" noWrap component="div">
+                    <Typography variant="h5" noWrap component="div" className="mx-auto">
                         Dashboard
                     </Typography>
                 </Toolbar>
@@ -130,11 +128,20 @@ function Dashboard(props) {
             >
                 <Switch>
                     <Route exact path={path}>
-                        <h3>Please select a topic.</h3>
+                        <Explore></Explore>
                     </Route>
-                    <Route path={`${path}/manageProducts`}>
+                    <Route path={`${path}/myOrders`}>
+                        <MyOrders></MyOrders>
+                    </Route>
+                    <Route path={`${path}/pay`}>
+                        <Pay></Pay>
+                    </Route>
+                    <Route path={`${path}/addReview`}>
+                        <AddReview></AddReview>
+                    </Route>
+                    <AdminRoute path={`${path}/manageProducts`}>
                         <ManageProducts></ManageProducts>
-                    </Route>
+                    </AdminRoute>
                     <AdminRoute path={`${path}/addAProduct`}>
                         <AddAProduct></AddAProduct>
                     </AdminRoute>

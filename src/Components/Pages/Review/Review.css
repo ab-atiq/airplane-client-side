@@ -1,6 +1,17 @@
 .review-container{
     display: grid;
     grid-template-columns: repeat(2,1fr);
-    align-items: center;
-    justify-content: space-between;
+    grid-gap: 30px;
+}
+.subreview-container{
+    padding: 20px;
+    border: 2px solid blue;
+    border-radius: 25px;
+}
+@media only screen and (max-width:1000px) {
+    .review-container{
+        display: grid;
+        grid-template-columns: repeat(1,1fr);
+        grid-gap: 30px;
+    }
 }

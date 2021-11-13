@@ -11,8 +11,8 @@ const Products = () => {
     }, [])
     return (
         <Container fluid>
-            <h1>This is product section.</h1>
-            <div className="product-contaier">
+            <h1 className='text-primary py-3'>Some Products</h1>
+            <div className="products-contaier">
                 {
                     products.map(product => <Product key={product._id} product={product} ></Product>)
                 }
