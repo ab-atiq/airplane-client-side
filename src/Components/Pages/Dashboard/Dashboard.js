@@ -25,6 +25,7 @@ import MyOrders from './MyOrders/MyOrders';
 import Pay from './Pay/Pay';
 import AddReview from '../AddReview/AddReview';
 import Explore from '../Explore/Explore';
+import ManageAllOrders from './ManageAllProducts/ManageAllProducts';
 const drawerWidth = 200;
 
 function Dashboard(props) {
@@ -43,12 +44,13 @@ function Dashboard(props) {
             <Toolbar />
             <Divider />
             <Link style={{ fontSize: '20px', textDecoration: 'none' }} to="/home">Home</Link><br />
-            
+
             {admin ?
                 <Box>
                     <Link style={{ fontSize: '20px', textDecoration: 'none' }} to={`${url}/makeAdmin`}>Make Admin</Link><br />
                     <Link style={{ fontSize: '20px', textDecoration: 'none' }} to={`${url}/addAProduct`}>Add a Product</Link><br />
                     <Link style={{ fontSize: '20px', textDecoration: 'none' }} to={`${url}/manageProducts`}>Manage Products</Link><br />
+                    <Link style={{ fontSize: '20px', textDecoration: 'none' }} to={`${url}/manageAllOrders`}>Manage All Orders</Link><br />
                     <Button className='btn btn-primary' style={{ fontSize: '20px', marginTop: '20px' }} onClick={logOut}> Logout</Button>
                 </Box>
                 :
@@ -126,6 +128,7 @@ function Dashboard(props) {
                 component="main"
                 sx={{ flexGrow: 1, p: 3, width: { sm: `calc(100% - ${drawerWidth}px)` } }}
             >
+
                 <Switch>
                     <Route exact path={path}>
                         <Explore></Explore>
@@ -142,6 +145,9 @@ function Dashboard(props) {
                     <AdminRoute path={`${path}/manageProducts`}>
                         <ManageProducts></ManageProducts>
                     </AdminRoute>
+                    <AdminRoute path={`${path}/manageAllOrders`}>
+                        <ManageAllOrders></ManageAllOrders>
+                    </AdminRoute>
                     <AdminRoute path={`${path}/addAProduct`}>
                         <AddAProduct></AddAProduct>
                     </AdminRoute>
@@ -149,6 +155,7 @@ function Dashboard(props) {
                         <MakeAdmin></MakeAdmin>
                     </AdminRoute>
                 </Switch>
+
             </Box>
         </Box>
     );

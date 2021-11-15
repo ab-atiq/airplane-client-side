@@ -12,6 +12,7 @@ const ManageProducts = () => {
     }, []);
     return (
         <Container fluid className='mb-4'>
+            <h2 className='text-primary'>Manage Products</h2>
             <h2 className='py-3 text-primary'>You can delete any Product</h2>
             <div className='manage-products-contaier'>
                 {

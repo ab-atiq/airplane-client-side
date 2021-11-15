@@ -7,20 +7,20 @@ const Purchase = () => {
     const { user } = useAuth();
     const { purchaseId } = useParams();
     const [product, setProduct] = useState({});
+    // const initialInfo = { buyerName: user.displayName, email: user.email, phone: '' };
+    // const initialInfo = { buyerName: user.displayName };
+    // console.log(initialInfo);
+    const [purchaseInfo, setPurchaseInfo] = useState({});
 
     useEffect(() => {
         fetch('https://stormy-everglades-33424.herokuapp.com/products')
             .then(res => res.json())
             .then(data => {
-                const matchedProduct = data.find(sinPro => sinPro._id == purchaseId)
-                setProduct(matchedProduct)
+                const matchedProduct = data.find(sinPro => sinPro._id === purchaseId);
+                setProduct(matchedProduct);
             });
-    }, [])
+    }, [purchaseId]);
 
-    const initialInfo = { buyerName: user.displayName, email: user.email, phone: '' };
-    // const initialInfo = { buyerName: user.displayName };
-    // console.log(initialInfo);
-    const [purchaseInfo, setPurchaseInfo] = useState(initialInfo);
 
     const handleOnBlur = e => {
         const field = e.target.name;
@@ -32,10 +32,13 @@ const Purchase = () => {
     }
 
     const handlePurchaseSubmit = e => {
-        const information = { ...purchaseInfo };
-        console.log(information);
+        product.proId = product._id;
+        delete product._id;
+        const information = { ...product };
+        information.email = user.email;
+        // console.log(information);
         // send to the server
-        fetch('https://stormy-everglades-33424.herokuapp.com/buyers', {
+        fetch('https://stormy-everglades-33424.herokuapp.com/orders', {
             method: "POST",
             headers: {
                 'content-type': 'application/json'
@@ -59,6 +62,8 @@ const Purchase = () => {
             <h1>{product?.name}</h1>
             <img style={{ width: '200px' }} src={product?.image} alt="" />
             <form onSubmit={handlePurchaseSubmit}>
+                <label>Product ID:</label>
+                <input type="text" onBlur={handleOnBlur} defaultValue={product?._id} name='product' disabled />
                 <label>Name:</label>
                 <input type="text" onBlur={handleOnBlur} defaultValue={user.displayName} name='buyerName' />
                 <label>Email:</label>
@@ -67,7 +72,7 @@ const Purchase = () => {
                 <input type="number" placeholder='Phone Number' name='phone' onBlur={handleOnBlur} />
                 <label>Address:</label>
                 <textarea placeholder="Give your details Information" id="" cols="10" rows="5" name='address' onBlur={handleOnBlur}></textarea>
-                <input style={{ width: '80px' }} className='btn btn-primary' type="submit" value="Submit" />
+                <input style={{ width: '90px' }} className='btn btn-primary' type="submit" value="Purchase" />
             </form>
         </div>
     );

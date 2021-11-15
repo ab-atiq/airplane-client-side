@@ -5,19 +5,22 @@ const SubManage = ({ product, products, setProducts }) => {
     const { _id, name, image } = product;
 
     const handleDelete = id => {
-        const url = `https://stormy-everglades-33424.herokuapp.com/products/${id}`;
-        fetch(url, {
-            method: 'DELETE'
-        })
-            .then(res => res.json())
-            .then(data => {
-                console.log(data);
-                if (data.deletedCount > 0) {
-                    alert('Deleted Successfully.');
-                    const remainingProducts = products.filter(product => product._id !== id);
-                    setProducts(remainingProducts);
-                }
+        const progress = window.confirm('Are you sure to delete this item? If you click ok, it will delete from database.');
+        if (progress) {
+            const url = `https://stormy-everglades-33424.herokuapp.com/products/${id}`;
+            fetch(url, {
+                method: 'DELETE'
             })
+                .then(res => res.json())
+                .then(data => {
+                    console.log(data);
+                    if (data.deletedCount > 0) {
+                        alert('Deleted Successfully.');
+                        const remainingProducts = products.filter(product => product._id !== id);
+                        setProducts(remainingProducts);
+                    }
+                })
+        }
     }
 
     return (
