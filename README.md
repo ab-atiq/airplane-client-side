@@ -1,5 +1,8 @@
 # All Feature of this website
-This project was react [Visit website](https://ph-assignment-12.firebaseapp.com/).
+Live site [Firebase host website](https://ph-assignment-12.firebaseapp.com/).
+Live site in [Vercel](https://airplane-client-side.vercel.app/).
+
+Server live site in [render](https://airplane-server-side.onrender.com)
 
 ## Website Name: ARP (Atiqur Rahman Plane).
 ## you can See all products, review,add review, category of plane, purchase, Authentication, react router.
